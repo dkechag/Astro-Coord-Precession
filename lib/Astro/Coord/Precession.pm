@@ -19,7 +19,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.0_1';
+our $VERSION = '0.01';
 
 use Exporter qw(import);
 

@@ -15,8 +15,7 @@ my %WriteMakefileArgs = (
     },
     TEST_REQUIRES => {
         'Test::More' => '0',
-        'Test2::V0'  => '0',
-        'Math::Trig' => '0'
+        'Test2::V0'  => '0'
     },
     PREREQ_PM => {
         'Math::Trig' => '0'
