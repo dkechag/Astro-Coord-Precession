@@ -15,11 +15,11 @@ Astro::Coord::Precession - Precess coordinates between 2 epochs
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Exporter qw(import);
 
@@ -100,7 +100,7 @@ sub precess_rad {
     my $csr  = 0.17453292519943e-01 / 3600;
     my $t    = 0.001 * ( $epoch2 - $epoch1 );
     my $st   = 0.001 * ( $epoch1 - 1900 );
-    my $a   =
+    my $a    =
         $csr * $t *
         (23042.53 + $st * (139.75 + 0.06 * $st) +
             $t * (30.23 - 0.27 * $st + 18 * $t));
@@ -133,7 +133,7 @@ sub precess_rad {
         for (0 .. 2);
 
     my $ra2 = atan2($x2[1], $x2[0]);
-    $ra2 += 2 * pi() if ($ra2 < 0);
+    $ra2 += 2 * pi() if $ra2 < 0;
     my $dec2 = asin($x2[2]);
     return [$ra2, $dec2];
 }
@@ -196,7 +196,6 @@ You could also raise issues or submit PRs to the github repo below.
 =head1 GIT
 
 L<https://github.com/dkechag/Astro-Coord-Precession>
-
 
 =head1 ACKNOWLEDGEMENTS
 
